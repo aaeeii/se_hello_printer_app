@@ -6,16 +6,17 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
 - Rozpoczynając pracę z projektem (wykorzystując virtualenv). Hermetyczne środowisko dla pojedynczej aplikacji w python-ie:
 
   ```
-  # centos, add to ~/.bashrc
-  $ source /usr/bin/virtualenvwrapper.sh
-
-  # ubuntu, add to ~/.bashrc
+  #ubuntu, add to ~/.bashrc
   $ source /usr/local/bin/virtualenvwrapper.sh
 
-  # tworzymy hermetyczne środowisko dla bibliotek aplikacji:
+  #tworzymy hermetyczne środowisko dla bibliotek aplikacji:
   $ mkvirtualenv wsb-simple-flask-app
+
   $ pip install -r requirements.txt
   $ pip install -r test_requirements.txt
+
+albo z MakeFile:
+  $ make deps
   ```
 
   Sprawdź: [documentację virtualenvwrappera](https://virtualenvwrapper.readthedocs.io/en/latest/command_ref.html)s oraz [biblioteki flask](http://flask.pocoo.org).
@@ -23,11 +24,14 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
 - Uruchamianie applikacji:
 
   ```
-  # jako zwykły program
-  $ python main.py
+  #jako zwykły program
+  $ python main.pycurl 127.0.0.1:5000
 
-  # albo:
+  #albo:
   $ PYTHONPATH=. FLASK_APP=hello_world flask run
+
+  #albo
+  $ make run
   ```
 
 - Uruchamianie testów (see: http://doc.pytest.org/en/latest/capture.html):
@@ -45,14 +49,14 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
 
   ...
 
-  # deaktywacja virtualenv
+  #deaktywacja virtualenv
   $ deactivate
   ```
 
 - Integracja z TravisCI:
 
   ```
-  # miejsce na twoje notatki
+  #miejsce na twoje notatki
   ```
 
 
