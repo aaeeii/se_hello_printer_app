@@ -1,4 +1,5 @@
-.PHONY: test
+USERNAME=aaeeii
+TAG=$(USERNAME)/hello_world_printer
 
 deps:
 	pip install -r requirements.txt; \
@@ -7,13 +8,13 @@ deps:
 lint:
 	flake8 hello_world test
 
-
+.PHONY: test
 test:
 	PYTHONPATH=. py.test  --verbose -s
 
 
 run:
-	PYTHONPATH=. FLASK_APP=hello_world flask run
+	python main.py
 
 docker_build:
 	docker build -t hello-world-printer .
@@ -23,9 +24,6 @@ docker_run: docker_build
 		--name hello-world-printer-dev \
 		-p 5000:5000 \
 		-d hello-world-printer
-
-USERNAME=aaeeii
-TAG=$(USERNAME)/hello_world_printer
 
 docker_push: docker_build
 	@docker login --username $(USERNAME) --password $${DOCKER_PASSWORD}; \
