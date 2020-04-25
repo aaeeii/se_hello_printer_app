@@ -1,4 +1,5 @@
 # Simple Flask App
+#test changes for pull request 
 
 Aplikacja Dydaktyczna wyświetlająca imię i wiadomość w różnych formatach dla zajęć
 o Continuous Integration, Continuous Delivery i Continuous Deployment.
