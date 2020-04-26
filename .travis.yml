@@ -11,7 +11,7 @@ script:
   - make docker_build
   - make docker_push
   - export
-deploy:
-  provider: heroku
-  app: testowa-apka-aaeeii-1
-  api_key: ${HEROKU_API_KEY}
+# deploy:
+  # provider: heroku
+  # app: testowa-apka-aaeeii-1
+  # api_key: ${HEROKU_API_KEY}
